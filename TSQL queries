@@ -1,0 +1,23 @@
+## The below statements allow me to create a table within an existing database and insert values into the newly created columns
+
+CREATE TABLE Employee_DOJ (
+Eno char(1) NOT NULL,
+Ename varchar(20),
+Job varchar(20),
+DOJ date,
+MgrNo char(1)
+)
+
+INSERT INTO Employee_DOJ
+VALUES
+	(1,'Raj','Clerk','12-dec-2003',4),
+	(2,'Ram','Sales Representative','10-dec-2004',3)
+	(3,'Rajesh','Accountant','5-jan-2005',4)
+	(4,'Ramesh','Manager','1-jan-2002',NULL)
+  
+  ## Find the names of the employees who joined the company before their managers (SELF JOIN)
+  
+SELECT *
+FROM Employee_DOJ AS Enames
+JOIN Employee_DOJ AS DateJoined
+ON Enames.MgrNo = DateJoined.Eno AND Enames.DOJ < DateJoined.DOJ
