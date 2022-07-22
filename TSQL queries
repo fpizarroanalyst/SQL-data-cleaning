@@ -17,7 +17,7 @@ VALUES
   
   ## Find the names of the employees who joined the company before their managers (SELF JOIN)
   
-SELECT *
+SELECT Enames.Ename,Enames.DOJ,DateJoined.Ename, DateJoined.DOJ
 FROM Employee_DOJ AS Enames
 JOIN Employee_DOJ AS DateJoined
-ON Enames.MgrNo = DateJoined.Eno AND Enames.DOJ < DateJoined.DOJ
+ON Enames.MgrNo = DateJoined.Eno AND Enames.DOJ < DateJoined.DOJ 
